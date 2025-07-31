@@ -1,11 +1,12 @@
 body {
   font-family: sans-serif;
-  padding: 30px;
-  background: #f5f5f5;
+  padding: 20px;
 }
 
-#chart {
-  width: 800px;
-  height: 500px;
-  margin-top: 20px;
+#chart svg {
+  background-color: #f9f9f9;
+}
+
+h1 {
+  text-align: center;
 }
