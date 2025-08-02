@@ -269,7 +269,7 @@ function drawScene2() {
 // }
 
 function drawScene3() {
-  d3.select("#chart").html("");
+  d3.select("#extra-chart").html("");
 
   d3.csv("data/college_student_placement_dataset.csv").then(data => {
     // Parse Extra_Curricular_Score as a number
