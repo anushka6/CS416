@@ -166,8 +166,12 @@ function drawScene3() {
 
   d3.csv("data/college_student_placement_dataset.csv").then(data => {
     // Group by Internship and calculate placement rate
+    const normalizedData = data.map(d => ({
+        ...d,
+        Internship: d.Internship.toLowerCase() === "yes" ? "Yes" : "No"
+    }));
     const stats = d3.rollups(
-      data,
+      normalizedData,
       v => {
         const placed = v.filter(d => d.Placement === "Yes").length;
         return {
@@ -256,7 +260,7 @@ function drawScene3() {
     // Annotation
     svg.append("text")
       .attr("x", width / 2)
-      .attr("y", height - margin.bottom + 40)
+      .attr("y", height - margin.bottom + 60)
       .attr("text-anchor", "middle")
       .style("font-style", "italic")
       .style("fill", "#555")
