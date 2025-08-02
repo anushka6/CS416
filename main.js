@@ -93,7 +93,7 @@ function drawScene2() {
 
   const width = 700;
   const height = 400;
-  const margin = { top: 40, right: 30, bottom: 50, left: 50 };
+  const margin = { top: 40, right: 40, bottom: 50, left: 50 };
 
   const svg = d3.select("#viz")
     .append("svg")
@@ -109,7 +109,7 @@ function drawScene2() {
     });
 
     const xScale = d3.scaleLinear()
-      .domain([5, 10])
+      .domain([4, 11])
       .range([0, width]);
 
     const yScale = d3.scaleLinear()
@@ -125,9 +125,9 @@ function drawScene2() {
       .append("circle")
       .attr("cx", d => xScale(d.CGPA))
       .attr("cy", d => yScale(d.Placement + (Math.random() * 0.2 - 0.1)))
-      .attr("r", 4)
+      .attr("r", 3)
       .style("fill", d => d.Placement ? "#4CAF50" : "#F44336")
-      .style("opacity", 0.6);
+      .style("opacity", 0.5);
 
     svg.append("text")
       .attr("x", width / 2)
