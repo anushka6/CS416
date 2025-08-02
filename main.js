@@ -295,7 +295,7 @@ function drawScene3() {
     const height = 400;
     const margin = { top: 60, right: 20, bottom: 60, left: 60 };
 
-    const svg = d3.select("#chart")
+    const svg = d3.select("#extra-chart")
       .append("svg")
       .attr("width", width)
       .attr("height", height + 50)
