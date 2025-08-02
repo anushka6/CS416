@@ -155,9 +155,9 @@ function drawScene2() {
 function drawScene3() {
   d3.select("#intern-chart").html("");
 
-  const width = 500;
-  const height = 400;
-  const margin = { top: 50, right: 20, bottom: 60, left: 60 };
+  const width = 700;
+  const height = 600;
+  const margin = { top: 70, right: 30, bottom: 80, left: 80 };
 
   const svg = d3.select("#intern-chart")
     .append("svg")
