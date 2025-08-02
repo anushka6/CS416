@@ -4,6 +4,10 @@ function drawScene1() {
   d3.select("#chart").html("");
 
   d3.csv("data/college_student_placement_dataset.csv").then(data => {
+    data.forEach(d => {
+      d.Academic_Performance = +d.Academic_Performance;
+    });
+
     const stats = d3.rollups(
       data,
       v => {
@@ -14,12 +18,12 @@ function drawScene1() {
           rate: placed / v.length
         };
       },
-      d => d.College_ID
-    ).sort((a, b) => d3.descending(a[1].rate, b[1].rate));
+      d => d.Academic_Performance
+    ).sort((a, b) => d3.ascending(a[0], b[0]));
 
     const width = 800;
     const height = 400;
-    const margin = { top: 60, right: 20, bottom: 120, left: 60 };
+    const margin = { top: 60, right: 20, bottom: 60, left: 60 };
 
     const svg = d3.select("#chart")
       .append("svg")
@@ -58,13 +62,13 @@ function drawScene1() {
       .attr("text-anchor", "middle")
       .style("font-size", "16px")
       .style("font-weight", "bold")
-      .text("Placement Rate by College");
+      .text("Placement Rate by Academic Performance");
 
     svg.append("text")
       .attr("x", width / 2)
       .attr("y", height - margin.bottom + 100)
       .attr("text-anchor", "middle")
-      .text("College ID");
+      .text("Academic Rating");
 
     svg.append("text")
       .attr("transform", "rotate(-90)")
