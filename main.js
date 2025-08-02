@@ -180,7 +180,7 @@ function drawScene3() {
           rate: placed / v.length
         };
       },
-      d => d.Internship
+      d => d.Internship_Experience
     );
 
     // Sort to make "Yes" appear first
@@ -281,7 +281,7 @@ function drawScene4() {
     .attr("height", height);
 
   d3.csv("data/college_student_placement_dataset.csv").then(data => {
-    const numericVars = ["CGPA", "IQ", "Projects", "Internship", "Domain_Knowledge"];
+    const numericVars = ["CGPA", "IQ", "Projects_Completed", "Internship_Experience", "Communication_Skills"];
 
     const dropdownX = d3.select("#xSelect");
     const dropdownY = d3.select("#ySelect");
