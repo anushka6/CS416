@@ -21,8 +21,8 @@ function drawScene1() {
       d => d.Academic_Performance
     ).sort((a, b) => d3.ascending(a[0], b[0]));
 
-    const width = 800;
-    const height = 400;
+    const width = window.innerWidth * 0.9; // 90% of screen width
+    const height = window.innerHeight * 0.7;
     const margin = { top: 60, right: 20, bottom: 60, left: 60 };
 
     const svg = d3.select("#chart")
@@ -95,8 +95,8 @@ function drawScene1() {
 function drawScene2() {
   d3.select("#viz").html("");
 
-  const width = 700;
-  const height = 400;
+  const width = window.innerWidth * 0.9; // 90% of screen width
+  const height = window.innerHeight * 0.7;
   const margin = { top: 40, right: 40, bottom: 50, left: 50 };
 
   const svg = d3.select("#viz")
@@ -159,8 +159,8 @@ function drawScene2() {
 function drawScene3() {
   d3.select("#intern-chart").html("");
 
-  const width = 600;
-  const height = 600;
+  const width = window.innerWidth * 0.9; // 90% of screen width
+  const height = window.innerHeight * 0.7;
   const margin = { top: 70, right: 30, bottom: 80, left: 80 };
 
   const svg = d3.select("#intern-chart")
@@ -372,8 +372,8 @@ function drawScene4() {
   d3.select("#scatter-chart").html("");
 
   const margin = { top: 50, right: 20, bottom: 60, left: 60 },
-        width = 600,
-        height = 450;
+        width = window.innerWidth * 0.9,
+        height = window.innerHeight * 0.7;
 
   const svg = d3.select("#scatter-chart")
     .append("svg")
@@ -381,7 +381,7 @@ function drawScene4() {
     .attr("height", height);
 
   d3.csv("data/college_student_placement_dataset.csv").then(data => {
-    const numericVars = ["CGPA", "IQ", "Projects_Completed", "Extra_Curricular_Score", "Communication_Skills"];
+    const numericVars = ["CGPA", "IQ", "Projects_Completed", "Extra_Curricular_Score", "Academic_Performance", "Communication_Skills"];
 
     const dropdownX = d3.select("#xSelect");
     const dropdownY = d3.select("#ySelect");
