@@ -8,6 +8,11 @@
 </head>
 <body onload="drawScene4()">
   <h2>Scene 4: Explore Factors that Affect Placement</h2>
+
+  <p style="font-weight: bold; margin-bottom: 10px;">
+    Choose any two variables to compare how different metrics affect placement:
+  </p>
+
   <label for="xSelect">X-Axis:</label>
   <select id="xSelect"></select>
 
@@ -15,6 +20,15 @@
   <select id="ySelect"></select>
 
   <div id="scatter-chart"></div>
+  <div id="legend" style="margin-top: 20px; font-size: 14px;">
+    <svg width="200" height="40">
+      <circle cx="10" cy="15" r="6" fill="green"></circle>
+      <text x="25" y="20">Placed</text>
+
+      <circle cx="100" cy="15" r="6" fill="red"></circle>
+      <text x="115" y="20">Not Placed</text>
+    </svg>
+  </div>
   <script src="main.js"></script>
 </body>
 </html>
