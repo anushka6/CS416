@@ -260,7 +260,7 @@ function drawScene3() {
       .attr("text-anchor", "middle")
       .style("font-weight", "bold")
       .text(d => `${(d[1].rate * 100).toFixed(1)}%`);
-
+  });
 }
 
 function drawScene4() {
